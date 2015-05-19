@@ -1,5 +1,23 @@
 <?php
 class Markovchain {
+
+/**
+ * makeMarkovText
+ *
+ * 入力されたテキストを元にマルコフ連鎖を利用しテキストを作成します。
+ *
+ *
+ * @param string $text
+ * @access public
+ * @return string   $text
+ */
+    public function makeMarkovText ($text) {
+         $text = preg_replace('/(\n|　|\s)/', '', $text);
+         $words = $this->wakatiText($text);
+         $table = $this->buildTable($words);
+         return $this->buildSentense($table);
+    }
+
 /**
  * wakatiText
  *
