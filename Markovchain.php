@@ -12,10 +12,24 @@ class Markovchain {
  * @return string   $text
  */
     public function makeMarkovText ($text) {
-         $text = preg_replace('/(\n|　|\s)/', '', $text);
-         $words = $this->wakatiText($text);
-         $table = $this->buildTable($words);
-         return $this->buildSentense($table);
+        $text = preg_replace('/(\n|　|\s)/', '', $text);
+        if (empty($text)) {
+            return false;
+        }
+
+        $words = $this->wakatiText($text);
+
+        $table = $this->buildTable($words);
+        if (empty($table)) {
+            return false;
+        }
+
+        $text = $this->buildSentense($table);
+        if (empty($text)) {
+            return false;
+        }
+
+        return $text;
     }
 
 /**
