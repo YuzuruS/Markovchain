@@ -1,0 +1,2 @@
+# Markovchain
+MeCabを使用したマルコフ連鎖のPHPライブラリ
