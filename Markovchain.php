@@ -18,18 +18,21 @@ class Markovchain {
         }
 
         $words = $this->wakatiText($text);
+        if (empty($words)) {
+            return false;
+        }
 
         $table = $this->buildTable($words);
         if (empty($table)) {
             return false;
         }
 
-        $text = $this->buildSentense($table);
-        if (empty($text)) {
+        $convText = $this->buildSentense($table);
+        if (empty($convText)) {
             return false;
         }
 
-        return $text;
+        return $convText;
     }
 
 /**
