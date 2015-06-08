@@ -1,4 +1,5 @@
 <?php
+namespace YuzuruS\Markovchain;
 class Markovchain {
 
     private $kuten_num = 0;

@@ -1,0 +1,19 @@
+{
+    "name": "YuzuruS/markovchain",
+    "description": "mackovchain text builder for MeCab",
+    "keywords": ["markovchain", "mecab"],
+    "type": "library",
+    "license": "MIT",
+    "homepage": "https://github.com/YuzuruS/Markovchain",
+    "authors": [
+      {
+        "name": "YuzuruS",
+        "email": "navitima@gmail.com"
+      }
+    ],
+    "autoload": {
+      "psr-0": {
+        "YuzuruS\\Markovchain": "src/"
+      }
+    }
+}
