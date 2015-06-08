@@ -1,5 +1,5 @@
 {
-    "name": "YuzuruS/markovchain",
+    "name": "yuzuru-s/markovchain",
     "description": "mackovchain text builder for MeCab",
     "keywords": ["markovchain", "mecab"],
     "type": "library",
