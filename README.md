@@ -1,5 +1,5 @@
 # Markovchain
-MeCabを使用したマルコフ連鎖のPHPライブラリ
+PHP Library that made TEXT of Markovchain by MeCab
 
 ### Usage
 
@@ -15,7 +15,7 @@ echo $mackovText;
 ```
 ### Installation
 
-This Lib use [MeCab](http://mecab.googlecode.com/svn/trunk/mecab/doc/index.html)
+This Library use [MeCab](http://mecab.googlecode.com/svn/trunk/mecab/doc/index.html)
 At First, You must install MeCab.
 And install this Lib.
 
@@ -25,6 +25,4 @@ And install this Lib.
 
 ### License
 
-Licensed under The MIT License
-
-Developed by YUZURU SUZUKI
+Copyright (c) 2014-16 Yuzuru Suzuki. See MIT-LICENSE for further details.
