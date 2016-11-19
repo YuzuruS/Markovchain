@@ -39,7 +39,7 @@ How to use
 Please check [sample code](https://github.com/YuzuruS/markovchain/blob/master/sample/usecase.php)
 
 ```php
-require __DIR__ . '/../vendor/autoload.php';
+require __DIR__ . '/vendor/autoload.php';
 use YuzuruS\Mecab\Markovchain;
 
 $mc = new Markovchain();
