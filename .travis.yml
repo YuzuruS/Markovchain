@@ -6,7 +6,7 @@ php:
   - 5.5
 before_install:
   - sudo apt-get update -qq
-  - sudo apt-get install php5-dev libmecab-dev build-essential
+  - sudo apt-get install libmecab-dev build-essential
 before_script:
   - wget https://gist.githubusercontent.com/YuzuruS/d3718029359320bc6dab9f7f6cfc1407/raw/c03c1b4d1dc30f64817014bb42fd2f8637c57cee/travisci_mecab_install.sh
   - chmod +x travisci_mecab_install.sh
