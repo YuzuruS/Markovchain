@@ -40,9 +40,6 @@ class Markovchain {
         }
 
         $words = $this->_makeWakatikakiText($text);
-        if (count($words) < 2) {
-            return false;
-        }
 
         $table = $this->_buildTable($words);
         $text = $this->_buildSentense($table);
