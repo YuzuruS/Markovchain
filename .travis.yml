@@ -15,7 +15,11 @@ before_script:
 script:
   - ./travisci_mecab_install.sh
   - git clone https://github.com/rsky/php-mecab
-  - cd php-mecab; phpize; ./configure; make; sudo make install
+  - cd php-mecab/mecab
+  - phpize
+  - ./configure
+  - make
+  - sudo make install
   - echo "extension=mecab.so" > mecab.ini
   - phpenv config-add mecab.ini
   - cd ../

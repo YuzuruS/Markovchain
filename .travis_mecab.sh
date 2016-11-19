@@ -5,7 +5,7 @@ set -e
 
 git clone https://github.com/rsky/php-mecab
 
-cd php-mecab
+cd php-mecab/mecab
 phpize
 ./configure
 make
