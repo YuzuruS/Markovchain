@@ -6,7 +6,13 @@ php:
   - 5.5
 before_install:
   - sudo apt-get update -qq
-  - sudo apt-get install -qq mecab mecab-ipadic-utf8 libmecab-dev
+  - wget http://ftp.sjtu.edu.cn/ubuntu/pool/universe/m/mecab/libmecab2_0.996-1.1_amd64.deb
+  - sudo dpkg -i  libmecab2_0.996-1.1_amd64.deb
+  - wget http://ftp.sjtu.edu.cn/ubuntu/pool/universe/m/mecab/libmecab-dev_0.996-1.1_amd64.deb
+  - sudo dpkg -i libmecab-dev_0.996-1.1_amd64.deb
+  - wget http://ftp.sjtu.edu.cn/ubuntu/pool/universe/m/mecab/mecab-utils_0.996-1.1_amd64.deb
+  - sudo dpkg -i mecab-utils_0.996-1.1_amd64.deb
+  - sudo apt-get install -y mecab-ipadic-utf8
   - chmod 755 .travis_mecab.sh
   - ./.travis_mecab.sh
 before_script:
