@@ -25,7 +25,7 @@ class MarkovChainTest extends \PHPUnit_Framework_TestCase
 		$this->assertTrue(!empty($return));
 
 		$return = $mc->makeMarkovText($samples[1]);
-		$this->assertFalse($return);
+		$this->assertTrue(!empty($return));
 
 		$return = $mc->makeMarkovText($samples[2]);
 		$this->assertFalse($return);
