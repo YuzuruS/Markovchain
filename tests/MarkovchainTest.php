@@ -41,6 +41,9 @@ class MarkovChainTest extends \PHPUnit_Framework_TestCase
 
 		$return = $this->markov->makeMarkovText($samples[2]);
 		$this->assertFalse($return);
+
+		$return = $this->markov->makeMarkovText($samples[3]);
+		$this->assertFalse($return);
 	}
 
 
