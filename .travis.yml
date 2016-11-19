@@ -6,6 +6,7 @@ php:
   - 5.5
 before_install:
   - curl https://gist.githubusercontent.com/dtan4/351d031bec0c3d45cd8f/raw/mecab_install.sh | bash
+  - chmod 755 .travis_mecab.sh
   - ./.travis_mecab.sh
 before_script:
   - wget http://getcomposer.org/composer.phar
