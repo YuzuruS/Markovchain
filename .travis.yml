@@ -6,9 +6,25 @@ php:
   - 5.5
 before_install:
   - sudo apt-get update -qq
-  - sudo apt-get install -y mecab mecab-ipadic-utf8
   - sudo apt-get install php5-dev libmecab-dev build-essential
 before_script:
+  - wget https://drive.google.com/uc?export=download&id=0B4y35FiV1wh7cENtOXlicTFaRUE
+  - tar zxfv mecab-0.996.tar.gz
+  - cd mecab-0.996
+  - ./configure
+  - make
+  - make check
+  - sudo make install
+  - sudo ldconfig
+  - cd ../
+  - wget https://drive.google.com/uc?export=download&id=0B4y35FiV1wh7MWVlSDBCSXZMTXM
+  - tar zxfv mecab-ipadic-2.7.0-20070801.tar.gz
+  - cd mecab-ipadic-2.7.0-20070801
+  - ./configure --with-charset=utf8
+  - make
+  - sudo make install
+  - sudo ldconfig
+  - cd ../
   - chmod +x .travis_mecab.sh
   - wget http://getcomposer.org/composer.phar
   - php composer.phar install --dev --no-interaction
