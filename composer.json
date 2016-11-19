@@ -1,19 +1,28 @@
 {
     "name": "yuzuru-s/markovchain",
-    "description": "mackovchain text builder for MeCab",
-    "keywords": ["markovchain", "mecab"],
+    "description": "mackovchain text builder for Japanese to use MeCab",
+    "keywords": ["markovchain", "mecab", "japanese", ],
     "type": "library",
     "license": "MIT",
+    "require" : {
+        "php": ">=5.5.0"
+    },
     "homepage": "https://github.com/YuzuruS/Markovchain",
     "authors": [
       {
         "name": "YuzuruS",
-        "email": "navitima@gmail.com"
+        "email": "navitima@gmail.com",
+        "homepage": "http://yuzurus.hatenablog.jp/"
       }
     ],
+    "require-dev": {
+      "phpunit/phpunit": "3.7.*@stable",
+      "satooshi/php-coveralls": "dev-master",
+      "fabpot/php-cs-fixer": "0.3.*@dev"
+    },
     "autoload": {
       "psr-0": {
-        "YuzuruS\\": "src/"
+        "YuzuruS": "src/"
       }
     }
 }
