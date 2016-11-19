@@ -3,7 +3,7 @@
 
 set -e
 
-git clone https://github.com:rsky/php-mecab.git
+git clone https://github.com/rsky/php-mecab.git
 
 cd php-mecab/mecab
 phpize
