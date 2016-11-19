@@ -54,7 +54,7 @@ class MarkovChainTest extends \PHPUnit_Framework_TestCase
 	/**
 	 * @dataProvider textProvider
 	 */
-	public function testMakeMarkovText3($text)
+	public function testMakeMarkovText2($text)
 	{
 		$return = $this->markov->makeMarkovText($text);
 		$this->assertFalse($return);

@@ -1,7 +1,7 @@
 {
     "name": "yuzuru-s/markovchain",
     "description": "mackovchain text builder for Japanese to use MeCab",
-    "keywords": ["markovchain", "mecab", "japanese", ],
+    "keywords": ["markovchain", "mecab", "japanese"],
     "type": "library",
     "license": "MIT",
     "require" : {
