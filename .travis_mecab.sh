@@ -1,16 +1,6 @@
-#!/bin/bash
-# install php-mecab extension.
-
-set -e
-
-git clone https://github.com/rsky/php-mecab.git
-
-cd php-mecab/mecab
-phpize
-./configure
-make
-make test
-sudo make install
-
-echo "extension=mecab.so" > mecab.ini
-phpenv config-add mecab.ini
+#!/bin/sh
+set -ex
+wget https://github.com/rsky/php-mecab/archive/master.zip
+unzip master.zip
+cd php-mecab-master/mecab && phpize && ./configure --with-php-config=/usr/bin/php-config --with-mecab-config=/usr/bin/mecab-config && make && sudo make install
+echo "extension=<extension>.so" >> ~/.phpenv/versions/$(phpenv version-name)/etc/php.ini
