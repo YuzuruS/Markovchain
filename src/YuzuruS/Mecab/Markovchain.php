@@ -73,12 +73,7 @@ class Markovchain {
     {
         $options = ['-O', 'wakati'];
 
-        $v = substr(PHP_VERSION, 0, 1);
-        if ($v == 7) {
-            $mecab = new \MeCab\Tagger($options);
-        } else {
-            $mecab = new \MeCab_Tagger($options);
-        }
+        $mecab = new \MeCab\Tagger($options);
         $wakatikakiText = $mecab->parse($text);
         $this->_kuten_num = substr_count($wakatikakiText, '。');
         $words = explode(' ', $wakatikakiText);
