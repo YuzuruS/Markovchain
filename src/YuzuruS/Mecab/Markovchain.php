@@ -99,7 +99,7 @@ class Markovchain {
      */
     private function _buildSentense( $table_markov )
     {
-        $result = $this->_pre = $this->head[array_rand($this->_head)];
+        $result = $this->_pre = $this->_head[array_rand($this->_head)];
 
         // 文字列を生成
         $kuten_num = 0;
