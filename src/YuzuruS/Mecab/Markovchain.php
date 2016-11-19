@@ -45,7 +45,20 @@ class Markovchain {
         }
 
         $table = $this->_buildTable($words);
-        return $this->_buildSentense($table);
+        $text = $this->_buildSentense($table);
+        $this->_clear();
+        return $text;
+    }
+
+    /**
+     * _clear
+     * 変数変数初期化
+     */
+    private function _clear()
+    {
+        $this->_kuten_num = 0;
+        $this->_pre = null;
+        $this->_head = [];
     }
 
     /**
