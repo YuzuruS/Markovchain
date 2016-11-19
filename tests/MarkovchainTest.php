@@ -15,6 +15,7 @@ class MarkovChainTest extends \PHPUnit_Framework_TestCase
 	{
 		$samples = [
 			'繁栄を築き上げた人類は、突如出現した“天敵”「巨人」により滅亡の淵に立たされた。生き残った人類は、「ウォール・マリア」、「ウォール・ローゼ」、「ウォール・シーナ」という巨大な三重の城壁の内側に生活圏を確保することで、辛うじてその命脈を保っていた。城壁による平和を得てから約100年後。いつしか人類は巨人の脅威を忘れ、平和な日々の生活に埋没していた。',
+			'釣つりの道具どうぐを、しらべようとして、信しん一は、物置小舎ものおきごやの中なかへ入はいって、あちらこちら、かきまわしているうちに、あきかんの中なかに、紙かみにつつんだものが、入はいっているのを見みつけ出だしました。「なんだろうか。」頭あたまを、かしげながら、ほこりに、よごれた紙かみを、あけてみると、べいごまが、六つばかり入はいっていました。信しん一は、急きゅうになつかしいものを、見みいだしたようにしばらくそれに見入みいっていました。そのはずです。一昨年おととしの春はるあたりまで、べいごまが、はやって、これを持もって原はらっぱへ、いったものです。それが、べいのやりとりをするのは、よくないというので、お父とうさんからも、先生せんせいからも、とめられて、ついみんなが、やめてしまったが、ただ記念きねんにしようと思おもって、これだけすてずに、紙かみに包つつんで、しまっておいたことを、思おもい出だしました。',
 			'富士',
 			'aaaaa',
 			'',
@@ -28,9 +29,12 @@ class MarkovChainTest extends \PHPUnit_Framework_TestCase
 		$this->assertTrue(!empty($return));
 
 		$return = $mc->makeMarkovText($samples[2]);
-		$this->assertFalse($return);
+		$this->assertTrue(!empty($return));
 
 		$return = $mc->makeMarkovText($samples[3]);
+		$this->assertFalse($return);
+
+		$return = $mc->makeMarkovText($samples[4]);
 		$this->assertFalse($return);
 	}
 
