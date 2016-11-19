@@ -5,16 +5,21 @@ php:
   - 5.6
   - 5.5
 before_install:
-  - sudo apt-get update -qq
-  - wget http://ftp.sjtu.edu.cn/ubuntu/pool/universe/m/mecab/libmecab2_0.996-1.1_amd64.deb
-  - sudo dpkg -i  libmecab2_0.996-1.1_amd64.deb
-  - wget http://ftp.sjtu.edu.cn/ubuntu/pool/universe/m/mecab/libmecab-dev_0.996-1.1_amd64.deb
-  - sudo dpkg -i libmecab-dev_0.996-1.1_amd64.deb
-  - wget http://ftp.sjtu.edu.cn/ubuntu/pool/universe/m/mecab/mecab-utils_0.996-1.1_amd64.deb
-  - sudo dpkg -i mecab-utils_0.996-1.1_amd64.deb
+  - wget https://mecab.googlecode.com/files/mecab-0.996.tar.gz
+  - tar zxfv mecab-0.996.tar.gz
+  - cd mecab-0.996
+  - ./configure --with-charset=utf8
+  - cd ../
+  - wget https://mecab.googlecode.com/files/mecab-ipadic-2.7.0-20070801.tar.gz
+  - tar zxfv mecab-ipadic-2.7.0-20070801.tar.gz
+  - cd mecab-ipadic-2.7.0-20070801
+  - ./configure --with-charset=utf8 --enable-utf8-only
   - sudo apt-get install -y mecab-ipadic-utf8
+  - cd ../
   - chmod 755 .travis_mecab.sh
-  - ./.travis_mecab.sh
+  - curl -O https://raw.githubusercontent.com/nihongodera/php-mecab-documentation/master/install-php-mecab.sh
+  - chmod +x install-php-mecab.sh
+  - ./install-php-mecab.sh
 before_script:
   - wget http://getcomposer.org/composer.phar
   - php composer.phar install --dev --no-interaction
