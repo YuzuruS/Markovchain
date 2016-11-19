@@ -19,7 +19,6 @@ before_script:
   - wget http://getcomposer.org/composer.phar
   - php composer.phar install --dev --no-interaction
 script:
-  - mkdir -p build/logs
   - php vendor/bin/phpunit -c phpunit.xml.dist
   - php coverage-checker.php build/logs/clover.xml 100
 
