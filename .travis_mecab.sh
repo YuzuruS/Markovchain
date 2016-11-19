@@ -1,6 +1,17 @@
-#!/bin/sh
-set -ex
-wget https://github.com/rsky/php-mecab/archive/master.zip
-unzip master.zip
-cd php-mecab-master/mecab && phpize && ./configure --with-php-config=/usr/bin/php-config --with-mecab-config=/usr/bin/mecab-config && make && sudo make install
-echo "extension=mecab.so" >> ~/.phpenv/versions/$(phpenv version-name)/etc/php.ini
+#!/bin/bash
+# install phpredis extension.
+
+set -e
+
+git clone https://github.com/rsky/php-mecab
+
+cd php-mecab
+phpize
+./configure
+make
+sudo make install
+
+echo "extension=mecab.so" > mecab.ini
+phpenv config-add mecab.ini
+
+cd ../
