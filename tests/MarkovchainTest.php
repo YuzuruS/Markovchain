@@ -11,19 +11,6 @@ require __DIR__ . '/../vendor/autoload.php';
 use YuzuruS\Mecab\Markovchain;
 class MarkovChainTest extends \PHPUnit_Framework_TestCase
 {
-	private $markov;
-
-	/**
-	 * setUp
-	 *
-	 * @access public
-	 * @return void
-	 */
-	public function setUp()
-	{
-		$this->markov = new MarkovChain();
-	}
-
 	public function testMakeMarkovText1()
 	{
 		$samples = [
@@ -33,16 +20,17 @@ class MarkovChainTest extends \PHPUnit_Framework_TestCase
 			'',
 		];
 
-		$return = $this->markov->makeMarkovText($samples[0]);
+		$mc = new MarkovChain();
+		$return = $mc->makeMarkovText($samples[0]);
 		$this->assertTrue(!empty($return));
 
-		$return = $this->markov->makeMarkovText($samples[1]);
+		$return = $mc->makeMarkovText($samples[1]);
 		$this->assertFalse($return);
 
-		$return = $this->markov->makeMarkovText($samples[2]);
+		$return = $mc->makeMarkovText($samples[2]);
 		$this->assertFalse($return);
 
-		$return = $this->markov->makeMarkovText($samples[3]);
+		$return = $mc->makeMarkovText($samples[3]);
 		$this->assertFalse($return);
 	}
 
