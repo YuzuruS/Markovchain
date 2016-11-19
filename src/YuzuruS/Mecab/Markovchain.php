@@ -72,7 +72,7 @@ class Markovchain {
     private function _makeWakatikakiText($text)
     {
         $options = ['-O', 'wakati'];
-        
+
         $v = substr(PHP_VERSION, 0, 1);
         if ($v == 7) {
             $mecab = new \MeCab\Tagger($options);
