@@ -10,21 +10,13 @@ before_install:
 before_script:
   - wget https://gist.githubusercontent.com/YuzuruS/d3718029359320bc6dab9f7f6cfc1407/raw/c03c1b4d1dc30f64817014bb42fd2f8637c57cee/travisci_mecab_install.sh
   - chmod +x travisci_mecab_install.sh
+  - chmod +x .travisci_mecab.sh
   - wget http://getcomposer.org/composer.phar
   - php composer.phar install --dev --no-interaction
 script:
   - ./travisci_mecab_install.sh
-  - git clone https://github.com/rsky/php-mecab
-  - cd php-mecab/mecab
-  - phpize
-  - ./configure
-  - make
-  - sudo make install
-  - echo "extension=mecab.so" > mecab.ini
-  - phpenv config-add mecab.ini
-  - cd ../
+  - ./.travis_mecab.sh
   - php vendor/bin/phpunit -c phpunit.xml.dist
   - php coverage-checker.php build/logs/clover.xml 100
-
 after_script:
   - php vendor/bin/coveralls -v
