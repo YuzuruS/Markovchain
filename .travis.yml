@@ -8,7 +8,7 @@ before_install:
   - sudo apt-get update -qq
   - sudo apt-get install php5-dev libmecab-dev build-essential
 before_script:
-  - wget https://drive.google.com/uc?export=download&id=0B4y35FiV1wh7cENtOXlicTFaRUE
+  - wget https://dl.dropboxusercontent.com/u/22237124/src/mecab/mecab-0.996.tar.gz
   - tar zxfv mecab-0.996.tar.gz
   - cd mecab-0.996
   - ./configure
@@ -17,7 +17,7 @@ before_script:
   - sudo make install
   - sudo ldconfig
   - cd ../
-  - wget https://drive.google.com/uc?export=download&id=0B4y35FiV1wh7MWVlSDBCSXZMTXM
+  - wget https://dl.dropboxusercontent.com/u/22237124/src/mecab/mecab-ipadic-2.7.0-20070801.tar.gz
   - tar zxfv mecab-ipadic-2.7.0-20070801.tar.gz
   - cd mecab-ipadic-2.7.0-20070801
   - ./configure --with-charset=utf8
