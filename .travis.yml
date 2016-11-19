@@ -5,25 +5,15 @@ php:
   - 5.6
   - 5.5
 before_install:
-  - wget https://mecab.googlecode.com/files/mecab-0.996.tar.gz
-  - tar zxfv mecab-0.996.tar.gz
-  - cd mecab-0.996
-  - ./configure --with-charset=utf8
-  - cd ../
-  - wget https://mecab.googlecode.com/files/mecab-ipadic-2.7.0-20070801.tar.gz
-  - tar zxfv mecab-ipadic-2.7.0-20070801.tar.gz
-  - cd mecab-ipadic-2.7.0-20070801
-  - ./configure --with-charset=utf8 --enable-utf8-only
-  - sudo apt-get install -y mecab-ipadic-utf8
-  - cd ../
-  - chmod 755 .travis_mecab.sh
-  - curl -O https://raw.githubusercontent.com/nihongodera/php-mecab-documentation/master/install-php-mecab.sh
-  - chmod +x install-php-mecab.sh
-  - ./install-php-mecab.sh
+  - sudo apt-get update -qq
+  - sudo apt-get install -y mecab mecab-ipadic-utf8
+  - sudo apt-get install php5-dev libmecab-dev build-essential
 before_script:
+  - chmod +x install-php-mecab.sh
   - wget http://getcomposer.org/composer.phar
   - php composer.phar install --dev --no-interaction
 script:
+  - ./travis-install-php-mecab.sh
   - php vendor/bin/phpunit -c phpunit.xml.dist
   - php coverage-checker.php build/logs/clover.xml 100
 
