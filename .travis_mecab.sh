@@ -14,4 +14,4 @@ sudo make install
 echo "extension=mecab.so" > mecab.ini
 phpenv config-add mecab.ini
 
-cd ../
+cd ../../
