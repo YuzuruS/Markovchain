@@ -5,6 +5,7 @@ PHP Library that made TEXT of Markovchain for Japanese by MeCab
 [![Build Status](https://travis-ci.org/YuzuruS/Markovchain.png?branch=master)](https://travis-ci.org/YuzuruS/Markovchain)
 [![Stable Version](https://poser.pugx.org/yuzuru-s/Markovchain/v/stable)](https://packagist.org/packages/yuzuru-s/Markovchain)
 [![Download Count](https://poser.pugx.org/yuzuru-s/Markovchain/downloads.png)](https://packagist.org/packages/yuzuru-s/redis-recommend)
+[![License](https://poser.pugx.org/yuzuru-s/markovchain/license)](https://packagist.org/packages/yuzuru-s/markovchain)
 
 Requirements
 -----------------------------
